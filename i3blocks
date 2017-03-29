@@ -1,0 +1,43 @@
+# i3blocks config - andy
+#
+# SIGNALS && pkill -RTMIN+1 i3blocks
+# 10 = volume button
+
+separator_block_width=30
+markup=none
+# color=#ff7c3a
+
+[temperature]
+label=
+command=sensors | grep Package | awk '{print $4}' | cut -d "+" -f2
+interval=1
+
+[disk]
+label=
+command=df -h | grep /dev/nvme0n1p5 | awk '{print $5 " " $4}'
+interval=60
+
+[wireless]
+label=
+command=iwgetid -r
+interval=10
+color=#00FF00
+
+[volume]
+label=vol
+command=amixer get Master | tail -n1 | awk '{print $5 " " $6}'
+interval=once
+signal=10
+
+[battery]
+label=
+command=acpi -b | awk -F'[, ]' '{print $5}'
+interval=60
+
+[date]
+label=
+command=date '+%b %d %l:%M:%S %P'
+interval=1
+
+
+# NEED A NEWLINE AFTER THIS OR ELSE I3BLOCKS WILL CRASH
