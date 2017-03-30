@@ -2,38 +2,39 @@
 #
 # SIGNALS && pkill -RTMIN+1 i3blocks
 # 10 = volume button
+# 12 = network status change
 
-separator_block_width=40
+separator_block_width=50
 markup=none
 command=~/.i3blocks/$BLOCK_NAME		# default command (script mode)
 
-[temp]
-# label= 
-# command=sensors | grep Package | awk '{print $4}' | cut -d "+" -f2
-interval=3
+[volume]
+# label=  
+interval=once
+signal=10
 
 [disk]
 label= 
-command=df -h | grep /dev/nvme0n1p5 | awk '{print $5 " " $4}'
+command=df -h | grep /dev/nvme0n1p5 | awk '{print $4}'
 interval=120
 
 [wifi]
 label= 
-interval=10
+interval=15
+signal=12
 
-[volume]
-label=vol 
-interval=once
-signal=10
+
+[temp]
+# label= 
+interval=3
 
 [battery]
-# battery changes icon based on value
 # label= 
 interval=60
 
 [date]
 label= 
-command=date '+%b %d %l:%M:%S %P'
+command=date '+%b %d - %l:%M:%S %P'
 interval=1
 
 

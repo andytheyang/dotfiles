@@ -1,6 +1,8 @@
 #!/bin/bash
 
 INTERFACE="wlp58s0"
+# auto detect:
+# INTERFACE=$(ip token | awk '{print $4}')
 
 # exit if wifi is down
 if [[ ! -d /sys/class/net/${INTERFACE}/wireless ]] ||
@@ -30,14 +32,3 @@ elif [[ $QUALITY -ge 40 ]]; then	# orange for >40%
 else
     echo "#FF0000"					# red for 0-40%
 fi
-
-# whoever wrote this should be ashamed
-# if [[ $QUALITY -ge 80 ]]; then
-#     echo "#00FF00"
-# elif [[ $QUALITY -lt 80 ]]; then
-#     echo "#FFF600"
-# elif [[ $QUALITY -lt 60 ]]; then
-#     echo "#FFAE00"
-# elif [[ $QUALITY -lt 40 ]]; then
-#     echo "#FF0000"
-# fi
