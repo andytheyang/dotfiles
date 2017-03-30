@@ -16,6 +16,6 @@ elif [[ $TEMP -ge 40 ]]; then
 	echo "  $TEMP°C"
 else					# less than 30deg
 	echo "  $TEMP°C"
-	echo "  $TEMP°C"
-	echo "#4286f4"		# blue for < 40deg
+	# echo "  $TEMP°C"
+	# echo "#4286f4"		# blue for < 40deg
 fi
