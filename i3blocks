@@ -8,10 +8,6 @@ separator_block_width=50
 markup=none
 command=~/.i3blocks/$BLOCK_NAME		# default command (script mode)
 
-[volume]
-# label=  
-interval=once
-signal=10
 
 [disk]
 label= 
@@ -31,6 +27,11 @@ interval=3
 [battery]
 # label= 
 interval=60
+
+[volume]
+# label=  
+interval=once
+signal=10
 
 [date]
 label= 
