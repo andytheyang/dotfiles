@@ -9,11 +9,11 @@ VOL=$(echo $INFO | awk '{print $1}')
 
 
 if [ $STATE != "on" ]; then	# MUTED
-	echo "  mute"		# full text
-	echo "  mute"		# small text
+	echo " mute"		# full text
+	echo " mute"		# small text
 	echo "#FF0000"	# red color if muted
 else							# UNMUTED
-	echo "  $VOL"		# full text
+	echo " $VOL"		# full text
 fi
 
 # echo "${STATE}"

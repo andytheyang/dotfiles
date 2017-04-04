@@ -1,8 +1,8 @@
 #!/bin/bash
 
-INTERFACE="wlp58s0"
 # auto detect:
 # INTERFACE=$(ip token | awk '{print $4}')
+INTERFACE="wlp58s0"
 
 # exit if wifi is down
 if [[ ! -d /sys/class/net/${INTERFACE}/wireless ]] ||
@@ -25,10 +25,10 @@ echo $QUALITY%		# short text
 # change color and icon depending on network quality
 if [[ $QUALITY -ge 80 ]]; then		# green for >80%
     echo "#00FF00"
-elif [[ $QUALITY -ge 60 ]]; then	# yellow for >60%
+elif [[ $QUALITY -ge 40 ]]; then	# yellow for >60%
     echo "#FFF600"
-elif [[ $QUALITY -ge 40 ]]; then	# orange for >40%
-    echo "#FFAE00"
+# elif [[ $QUALITY -ge 40 ]]; then	# orange for >40%
+#     echo "#FFAE00"
 else
     echo "#FF0000"					# red for 0-40%
 fi

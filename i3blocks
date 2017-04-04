@@ -4,18 +4,19 @@
 # 10 = volume button
 # 12 = network status change
 
+# separator_block_width=25
 separator_block_width=50
 markup=none
 command=~/.i3blocks/$BLOCK_NAME		# default command (script mode)
-
+# border=#FF0000
 
 [disk]
-label= 
+label=
 command=df -h | grep /dev/nvme0n1p5 | awk '{print $4}'
 interval=120
 
 [wifi]
-label= 
+label=
 interval=15
 signal=12
 
@@ -33,9 +34,14 @@ interval=60
 interval=once
 signal=10
 
-[date]
-label= 
-command=date '+%b %d - %l:%M:%S %P'
+# [date]
+# label= 
+# command=date '+%b %d'
+# interval=once
+
+[time]
+label=
+command=date '+%b %d %l:%M:%S %P'
 interval=1
 
 

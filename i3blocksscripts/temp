@@ -5,17 +5,15 @@
 TEMP=$(sensors | grep Package | awk '{print $4}' | tr -d "+°C")
 
 if [[ $TEMP -ge 75 ]]; then
-	echo "  $TEMP°C"
-	echo "  $TEMP°C"
+	echo " $TEMP°C"
+	echo " $TEMP°C"
 	echo "#FF0000"		# red for > 75deg
 elif [[ $TEMP -ge 60 ]]; then
-	echo "  $TEMP°C"
-	echo "  $TEMP°C"
+	echo " $TEMP°C"
+	echo " $TEMP°C"
 	echo "#FFF600"		# yellow for > 60deg
 elif [[ $TEMP -ge 40 ]]; then
-	echo "  $TEMP°C"
+	echo " $TEMP°C"
 else					# less than 30deg
-	echo "  $TEMP°C"
-	# echo "  $TEMP°C"
-	# echo "#4286f4"		# blue for < 40deg
+	echo " $TEMP°C"
 fi

@@ -15,6 +15,7 @@
 # ttf-font-awesome
 
 
+
 ### KEY CONFIG ###
 set $mod Mod4
 
@@ -168,6 +169,8 @@ bindsym XF86AudioPause exec playerctl pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
+bindsym XF86Sleep exec systemctl suspend
+
 
 ### END KEY CONFIG ###
 
@@ -196,7 +199,8 @@ bar {
 	position bottom
 	separator_symbol ""
 	strip_workspace_numbers yes
-	height 70
+	height 80
+	# border #FFFFFF
 
 	colors {
 		background $back
@@ -237,7 +241,6 @@ hide_edge_borders smart
 
 # HIDPI OPTIONS
 exec --no-startup-id xrandr --dpi 240
-# exec --no-startup-id xrandr --dpi 96
 
 # disable trackpad tap registration after typing
 exec --no-startup-id syndaemon -i 0.2 -K -R -d
